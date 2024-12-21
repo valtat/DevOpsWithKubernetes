@@ -1,0 +1,12 @@
+{
+  "name": "exercise_1.01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "log_output.js",
+  "scripts": {
+    "start": "node log_output.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
