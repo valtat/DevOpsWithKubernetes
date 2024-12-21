@@ -1,9 +1,11 @@
-FROM python:3.9-slim
+FROM node:alpine
 
 WORKDIR /app
 
-COPY . /app
+COPY package* ./
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN npm ci
 
-CMD ["python", "log_output.py"]
+COPY . .
+
+CMD ["npm", "start"]
