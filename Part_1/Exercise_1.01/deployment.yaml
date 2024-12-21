@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: log-output-deployment
+  labels:
+    app: log-output
 spec:
   replicas: 1
   selector:
@@ -14,6 +16,6 @@ spec:
     spec:
       containers:
       - name: log-output
-        image: valeriot015/log-output:latest
+        image: valeriot015/log_output:latest
         ports:
         - containerPort: 80
