@@ -1,0 +1,16 @@
+{
+  "name": "exercise_1.01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "log_output_writer.js",
+  "scripts": {
+    "write": "node log_output_writer.js",
+    "read": "node log_output_reader.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
