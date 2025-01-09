@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-output-ping-pong-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-output-ping-pong-application
+  template:
+    metadata:
+      labels:
+        app: log-output-ping-pong-application
+    spec:
+      volumes:
+        - name: shared-image
+          persistentVolumeClaim:
+            claimName: image-claim
+      containers:
+        - name: log-output
+          image: valeriot015/log-output:1.11
+          volumeMounts:
+          - name: shared-image
+            mountPath: /usr/src/app/files
+        - name: image-response
+          image: valeriot015/ping-pong-application:1.11
+          volumeMounts:
+          - name: shared-image
+            mountPath: /usr/src/app/files
